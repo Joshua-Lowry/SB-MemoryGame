@@ -1,0 +1,212 @@
+body {
+  background-image: url("https://hls.harvard.edu/wp-content/uploads/2022/05/CONSTITUTION_iStock-923052552_2500.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.h2 {
+  position: absolute;
+  top: 14em;
+  left: 35%;
+  font-size: 55px;
+  font-weight: bolder;
+}
+
+.btn {
+  position: absolute;
+  top: 11em;
+  background-image: url("https://ygo-assets-websites-legacy.yougov.net/cumulus_uploads/entry/30652/american-flag.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 125px;
+  color: black;
+  text-align: center;
+  font-weight: bolder;
+  border: black;
+  border-style: solid;
+  border-radius: 50px;
+  font-size: 5em;
+  left: 18%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+#start {
+  height: 110vh;
+  font-family: "Tangerine", cursive;
+  font-size: 1em;
+  color: #c5ba18;
+  text-shadow: 2px 5px 6px rgb(250, 249, 200);
+  position: relative;
+  background: linear-gradient(180deg, black, #6b0505);
+}
+
+#title {
+  position: absolute;
+  left: 200px;
+  top: 1em;
+  font-size: 8rem;
+  perspective: 600px;
+}
+
+#title > p {
+  transform: rotateX(45deg);
+  line-height: 0.75;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 2em;
+  color: #f3f4f8;
+}
+
+#start.playing {
+  margin-top: -80vh;
+  transition: margin-top 1s;
+}
+
+#start.playing + #game {
+  display: flex;
+}
+
+#game {
+  bottom: 0em;
+  font-family: "Tangerine", cursive;
+  color: #fafaf9;
+  text-shadow: 2px 5px 6px rgb(250, 249, 200);
+  position: relative;
+  background: linear-gradient(180deg, #6b0505, black);
+}
+
+#game .row {
+  width: 100%;
+  position: relative;
+  bottom: 150px;
+}
+
+.container {
+  flex-wrap: wrap;
+}
+
+.game-card-wrapper {
+  perspective: 600px;
+  width: 85%;
+  padding-bottom: 120%;
+  position: relative;
+  margin: 10px auto;
+}
+
+.game-card-wrapper:hover {
+  cursor: pointer;
+}
+
+.game-card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.game-card.flipped {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  border: 2px solid black;
+  overflow: hidden;
+}
+
+.front {
+  background: linear-gradient(315deg, white, #0115c5, white);
+  font-size: 8rem;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.back > img {
+  height: 100%;
+  width: auto;
+}
+
+#current-score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 8rem;
+  font-family: "Tangerine", cursive;
+  color: rgb(243, 243, 195);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+#end {
+  display: none;
+}
+
+#end.game-over {
+  display: flex;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.75);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  justify-content: space-around;
+  font-family: "Tangerine", cursive;
+  text-align: center;
+}
+
+#end h1 {
+  font-size: 8rem;
+  text-transform: capitalize;
+}
+
+#end h4 {
+  top: 18em;
+  position: absolute;
+  font-size: 3rem;
+  font-size: 4em;
+}
+
+#restart-button {
+  left: 45%;
+  color: black;
+  text-shadow: 2px 5px 4px rgb(250, 249, 200);
+}
+
+@media (max-width: 992px) {
+  .game-card-wrapper {
+    width: 100%;
+    padding-bottom: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .game-card-wrapper {
+    width: 120%;
+    padding-bottom: 120%;
+  }
+}
